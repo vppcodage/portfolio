@@ -1,15 +1,45 @@
-import type {StructureResolver} from 'sanity/structure'
+import type { StructureResolver } from "sanity/structure";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { HiOutlineTerminal } from "react-icons/hi";
+import { RiPagesLine } from "react-icons/ri";
 
-// https://www.sanity.io/docs/structure-builder-cheat-sheet
+// Structure resolver for a portfolio
 export const structure: StructureResolver = (S) =>
   S.list()
-    .title('Blog')
+    .title("Documents")
     .items([
-      S.documentTypeListItem('post').title('Posts'),
-      S.documentTypeListItem('category').title('Categories'),
-      S.documentTypeListItem('author').title('Authors'),
+      // Global Section
+      S.listItem()
+        .title("Global")
+        .icon(AiOutlineGlobal)
+        .child(
+          S.list()
+            .title("Global")
+            .items([
+              S.documentTypeListItem("header")
+                .title("Header")
+                .icon(HiOutlineTerminal),
+              S.documentTypeListItem("footer")
+                .title("Footer")
+                .icon(HiOutlineTerminal),
+            ])
+        ),
       S.divider(),
+      S.listItem()
+        .title("Site Pages")
+        .icon(RiPagesLine)
+        .child(
+          S.list()
+            .title("Site Pages")
+            .items([
+              S.documentTypeListItem("header")
+                .title("header")
+                .icon(HiOutlineTerminal),
+            ])
+        ),
+
+      // Catch-all for other document types
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['post', 'category', 'author'].includes(item.getId()!),
+        (item) => item.getId() && !["header", "footer"].includes(item.getId()!)
       ),
-    ])
+    ]);

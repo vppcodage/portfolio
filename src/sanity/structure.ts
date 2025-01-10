@@ -56,6 +56,7 @@ export const structure: StructureResolver = (S) =>
 
       // Catch-all for other document types
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !["header", "footer"].includes(item.getId()!)
+        (item) =>
+          item.getId() && !["header", "footer", "title"].includes(item.getId()!)
       ),
     ]);

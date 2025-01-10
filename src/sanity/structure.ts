@@ -3,6 +3,7 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { HiOutlineTerminal } from "react-icons/hi";
 import { RiPagesLine } from "react-icons/ri";
 import { TbNewSection } from "react-icons/tb";
+import { FaHome } from "react-icons/fa";
 
 // Structure resolver for a portfolio
 export const structure: StructureResolver = (S) =>
@@ -33,9 +34,9 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title("Site Pages")
             .items([
-              S.documentTypeListItem("header")
-                .title("header")
-                .icon(HiOutlineTerminal),
+              S.documentTypeListItem("home_page")
+                .title("Home Page")
+                .icon(FaHome),
             ])
         ),
       S.listItem()
@@ -57,6 +58,7 @@ export const structure: StructureResolver = (S) =>
       // Catch-all for other document types
       ...S.documentTypeListItems().filter(
         (item) =>
-          item.getId() && !["header", "footer", "title"].includes(item.getId()!)
+          item.getId() &&
+          !["header", "footer", "title", "home_page"].includes(item.getId()!)
       ),
     ]);

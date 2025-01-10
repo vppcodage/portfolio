@@ -2,6 +2,7 @@ import type { StructureResolver } from "sanity/structure";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { HiOutlineTerminal } from "react-icons/hi";
 import { RiPagesLine } from "react-icons/ri";
+import { TbNewSection } from "react-icons/tb";
 
 // Structure resolver for a portfolio
 export const structure: StructureResolver = (S) =>
@@ -34,6 +35,21 @@ export const structure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem("header")
                 .title("header")
+                .icon(HiOutlineTerminal),
+            ])
+        ),
+      S.listItem()
+        .title("Sections")
+        .icon(TbNewSection)
+        .child(
+          S.list()
+            .title("Sections")
+            .items([
+              S.documentTypeListItem("header")
+                .title("header")
+                .icon(HiOutlineTerminal),
+              S.documentTypeListItem("footer")
+                .title("footer")
                 .icon(HiOutlineTerminal),
             ])
         ),

@@ -46,11 +46,8 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title("Sections")
             .items([
-              S.documentTypeListItem("header")
-                .title("header")
-                .icon(HiOutlineTerminal),
-              S.documentTypeListItem("footer")
-                .title("footer")
+              S.documentTypeListItem("home_hero_section")
+                .title("Home Hero Banner")
                 .icon(HiOutlineTerminal),
             ])
         ),

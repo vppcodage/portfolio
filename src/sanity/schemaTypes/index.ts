@@ -3,7 +3,8 @@ import { type SchemaTypeDefinition } from "sanity";
 import documentTypes from "./documents";
 import globalTypes from "./global";
 import pageTypes from "./pages";
+import sectionTypes from "./sections";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [...documentTypes, ...globalTypes, ...pageTypes],
+  types: [...documentTypes, ...globalTypes, ...pageTypes, ...sectionTypes],
 };

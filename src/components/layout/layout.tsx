@@ -1,11 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Footer, Header } from "../common";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      <div>Header</div>
+    <Fragment>
+      <Header />
       <main>{children}</main>
-      <div>Footer</div>
-    </>
+      <Footer />
+    </Fragment>
   );
 };

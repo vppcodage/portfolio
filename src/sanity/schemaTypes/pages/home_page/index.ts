@@ -46,19 +46,8 @@ const home_page = defineType({
     defineField({
       name: "section",
       title: "Section",
-      type: "string",
-      // of: [
-      //   { type: "home_hero_section" },
-      //   { type: "featurd_case_study" },
-      //   { type: "section_course_title" },
-      //   { type: "price_section_document" },
-      //   { type: "case_study" },
-      //   { type: "blog_title_section" },
-      //   { type: "testimonials_section" },
-      //   { type: "comparision_frameworks" },
-      //   { type: "title_image_array_section" },
-      //   { type: "customer_reviews" },
-      // ],
+      type: "array",
+      of: [{ type: "home_hero_section" }],
       group: "main",
     }),
     defineField({

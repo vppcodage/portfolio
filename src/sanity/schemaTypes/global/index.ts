@@ -1,5 +1,6 @@
 import button from "./button";
 import custom_image from "./custom_image";
+import label_icon_link from "./label_icon_link";
 import label_link from "./label_link";
 import rich_text from "./rich_text";
 import seo from "./seo";
@@ -24,6 +25,7 @@ const globalTypes = [
   title_description,
   title_content,
   title_description_image,
+  label_icon_link,
 ];
 
 export default globalTypes;

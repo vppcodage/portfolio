@@ -11,26 +11,21 @@ const header = defineType({
       type: "string",
     }),
     defineField({
+      name: "logo",
+      title: "Logo",
+      type: "custom_image",
+    }),
+    defineField({
       name: "nav_links",
       title: "Nav Links",
       type: "array",
       of: [{ type: "label_link" }],
     }),
     defineField({
-      name: "button",
-      title: "Button",
-      type: "button",
-    }),
-    defineField({
-      name: "background_classname",
-      title: "Background Classname",
-      type: "string",
-      initialValue: "white",
-      options: {
-        // list: background_classname,
-        direction: "horizontal",
-        layout: "radio",
-      },
+      name: "socials_links",
+      title: "Socials Links",
+      type: "array",
+      of: [{ type: "label_icon_link" }],
     }),
   ],
 });
